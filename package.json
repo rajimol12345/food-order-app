@@ -1,6 +1,6 @@
 {
-  "homepage":"https://github.com/rajimol12345/Food-ordering-Website",
-  "name": "food-ordering-website",
+  "homepage": "https://rajimol12345.github.io/food-order-app",
+  "name": "food-order-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,12 +16,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-     "deploy": "gh-pages -d build"
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
