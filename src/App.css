@@ -1,0 +1,87 @@
+/* app.css */
+
+/* Container spacing */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Page title */
+.home-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ff5722;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* Lead paragraph */
+.lead {
+  font-size: 1.25rem;
+  text-align: center;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+/* Featured restaurants section */
+.featured-restaurants {
+  margin-top: 2rem;
+}
+
+/* Section heading */
+.section-heading {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #ff5722;
+  padding-bottom: 0.5rem;
+  color: #ff5722;
+  text-align: center;
+}
+
+/* Carousel image styling */
+.restaurant-img {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Restaurant cards container */
+.restaurant-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+/* Individual restaurant card */
+.restaurant-card {
+  flex: 1 1 250px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Restaurant name */
+.restaurant-card h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Restaurant description */
+.restaurant-card p {
+  color: #666;
+  font-size: 1rem;
+}
