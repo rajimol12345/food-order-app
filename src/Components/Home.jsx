@@ -1,81 +1,66 @@
 import React from 'react';
-import '../App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
+import img1 from './img/pizza.avif';
+import img2 from './img/burger.avif';
+import img3 from './img/dessert.avif';
+const Home = () => {
 
-// Import local images
-import img1 from './img/img1.webp';
-import img2 from './img/img2.jpeg';
-import img3 from './img/img3.jpg';
-
-function Home() {
   return (
-    <main className="container my-5">
-      <h1 className="home-title text-center mb-4">Welcome to FoodExpress</h1>
-      <p className="lead text-center mb-5">
-        Discover the best restaurants and order your favorite food online.
-      </p>
-
-      <section className="featured-restaurants">
-        <h2 className="section-heading mb-4">Featured Restaurants</h2>
-
-        <div id="featuredRestaurantsCarousel" className="carousel slide" data-bs-ride="carousel">
-          <div className="carousel-inner">
-
-            {/* Item 1 */}
-            <div className="carousel-item active">
-              <div className="row align-items-center">
-                <div className="col-md-6 text-center text-md-start mb-4 mb-md-0">
-                  <h3>Pizza Heaven</h3>
-                  <p>Delicious wood-fired pizzas and more.</p>
-                </div>
-                <div className="col-md-6 text-center">
-                  <img src={img1} alt="Pizza Place" className="restaurant-img rounded" />
-                </div>
+    <div>
+      <main class="flex-grow-1 container-fluid my-6 px-6">
+      <div class="row align-items-center">
+       <div class="col-md-6 mb-4 mb-md-0">
+        <div id="foodCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src={img1} class="d-block w-100" alt="Pizza" height="450" width="400" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Delicious Pizza</h5>
+                <p>Hot, cheesy, and delivered fast to your door.</p>
               </div>
             </div>
-
-            {/* Item 2 */}
-            <div className="carousel-item">
-              <div className="row align-items-center">
-                <div className="col-md-6 text-center text-md-start mb-4 mb-md-0">
-                  <h3>Sushi World</h3>
-                  <p>Fresh and authentic Japanese sushi.</p>
-                </div>
-                <div className="col-md-6 text-center">
-                  <img src={img2} alt="Sushi Bar" className="restaurant-img rounded" />
-                </div>
+            <div class="carousel-item">
+              <img src={img2} class="d-block w-100" alt="Burger" height="450" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Juicy Burgers</h5>
+                <p>Loaded with flavor and grilled to perfection.</p>
               </div>
             </div>
-
-            {/* Item 3 */}
-            <div className="carousel-item">
-              <div className="row align-items-center">
-                <div className="col-md-6 text-center text-md-start mb-4 mb-md-0">
-                  <h3>Burger Hub</h3>
-                  <p>Juicy burgers with premium ingredients.</p>
-                </div>
-                <div className="col-md-6 text-center">
-                  <img src={img3} alt="Burger Joint" className="restaurant-img rounded" />
-                </div>
+            <div class="carousel-item">
+              <img src={img3} class="d-block w-100" alt="Desserts" height="450" />
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Sweet Desserts</h5>
+                <p>Finish your meal with a delightful dessert.</p>
               </div>
             </div>
-
           </div>
-
-          {/* Carousel Controls */}
-          <button className="carousel-control-prev" type="button" data-bs-target="#featuredRestaurantsCarousel" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
+          <button class="carousel-control-prev" type="button" data-bs-target="#foodCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
           </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#featuredRestaurantsCarousel" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
+          <button class="carousel-control-next" type="button" data-bs-target="#foodCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
           </button>
         </div>
-      </section>
-    </main>
+      </div>
+      <div class="col-md-6">
+        <div class="p-4 bg-light rounded shadow-sm">
+          <h2 class="text-danger fw-bold mb-3">
+            Welcome to <span class="text-dark">EatYoWay</span>
+          </h2>
+          <p class="lead text-secondary">
+            At <strong>EatYoWay</strong>, we bring mouthwatering dishes right to your doorstep. Whether you're craving a cheesy pizza, a juicy burger, or a sweet dessert to top off your meal, we’ve got you covered.
+          </p>
+          <p class="text-muted">
+            Browse our <strong>Menu</strong> to explore a variety of delicious options. Place your order in just a few clicks and enjoy fast, reliable delivery from our kitchen to your table.
+          </p>
+          <p class="text-muted">
+            Join thousands of happy customers and make your next meal unforgettable with <strong>EatYoWay</strong>.
+          </p>
+        </div>
+      </div>
+      </div>
+      </main>
+    </div>
   );
-}
+};
 
 export default Home;
