@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // ✅ import navigator
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import './login.css'
 export default function RegisterForm() {
-  const navigate = useNavigate(); // ✅ initialize navigate
+  const navigate = useNavigate(); 
 
   const [formData, setFormData] = useState({
     fullname: '',
@@ -75,7 +76,7 @@ export default function RegisterForm() {
         confirm_password: '',
       });
       setErrors({});
-      navigate('/LoginForm'); // ✅ redirect to login
+      navigate('/LoginForm'); 
     }
   };
 

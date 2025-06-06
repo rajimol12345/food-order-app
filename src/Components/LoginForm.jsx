@@ -46,7 +46,7 @@ export default function LoginForm() {
       alert('Login successful!');
       setFormData({ email: '', password: '' });
       setErrors({});
-      navigate('/Home');  // navigate to /home after login
+      navigate('/Home'); 
     }
   };
 
