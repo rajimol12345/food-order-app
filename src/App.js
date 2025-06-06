@@ -1,7 +1,6 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Header from './Components/Header';
 import RegisterForm from './Components/RegisterForm';
 import LoginForm from './Components/LoginForm';
@@ -16,39 +15,37 @@ import Logout from './Components/Logout';
 function App() {
   const location = useLocation();
 
-const [isVisible,setIsVissible] = useState(true)
-
+  // Hide header/footer on these paths
   const hideLayoutRoutes = ["/LoginForm", "/RegisterForm"]; 
   const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
-console.log(shouldHideLayout);
+
   const handleAuthSuccess = (userData) => {
     console.log("Authentication successful:", userData);
   };
 
   return (
-    <div >
-        {isVisible ? (
-          <Header />
-        ) : (
-          null
-        )}
+    <div>
+      {!shouldHideLayout && <Header />}
 
       <Routes>
-        <Route path="*" element={<RegisterForm onSuccess={handleAuthSuccess} />} />
+        {/* Redirect root to LoginForm */}
+        <Route path="/" element={<Navigate to="/LoginForm" replace />} />
+
+        {/* Auth routes */}
         <Route path="/LoginForm" element={<LoginForm onSuccess={handleAuthSuccess} />} />
+        <Route path="/RegisterForm" element={<RegisterForm onSuccess={handleAuthSuccess} />} />
+
+        {/* Main app routes */}
+        <Route path="/Home" element={<Home />} />
         <Route path="/Menu" element={<Menu />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Order" element={<Orders />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Logout" element={<Logout />} />
-        <Route path="/Home" element={<Home />} />
+        <Route path="*" element={<Navigate to="/LoginForm" replace />} />
       </Routes>
 
-              {isVisible ? (
-          <Footer />
-        ) : (
-          null
-        )}
+      {!shouldHideLayout && <Footer />}
     </div>
   );
 }
