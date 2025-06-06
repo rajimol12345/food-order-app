@@ -52,6 +52,11 @@ export default function LoginForm() {
 
   return (
     <div className="container">
+      {/* Welcome Message */}
+      <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
+        Welcome back! Please log in to continue.
+      </h2>
+
       <form className="form-box" onSubmit={handleSubmit} noValidate>
         <h1>Login</h1>
 
@@ -83,8 +88,8 @@ export default function LoginForm() {
 
         <button type="submit" className="submit-btn">Login</button>
         <p>
-         Don't have an account? <Link to="/RegisterForm">Register here</Link>
-       </p>
+          Don't have an account? <Link to="/RegisterForm">Register here</Link>
+        </p>
       </form>
     </div>
   );
